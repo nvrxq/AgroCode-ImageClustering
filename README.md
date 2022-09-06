@@ -22,5 +22,5 @@ loss = **Loss Function(output, x_train)**
 # Other
 This is just the first simple implementation of DCEC, improved implementations can be viewed from the links above.
 
-
+* $ docker build -t $IMAGE_TAG -f ./Dockerfile ./
 
