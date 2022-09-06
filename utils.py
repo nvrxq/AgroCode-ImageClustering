@@ -1,27 +1,23 @@
-import torch
-import pandas as pd
+import tensorflow as tf
 import numpy as np
-import os
-
-from torch.utils.data import Dataset, DataLoader
 
 class CFG:
-    batch_size = 16
     '''
-    Help Functions
+    Suppor Class
     '''
 
     @staticmethod
-    def seed_everything(seed: int):
-        os.environ['PYTHONHASHSEED'] = str(seed)
-        np.random.seed(seed)
-        torch.manual_seed(seed)
-        torch.cuda.manual_seed(seed)
-        torch.backends.cudnn.deterministic = True
-        torch.backends.cudnn.benchmark = True
+    def resize_images(images):
+        return tf.image.resize(images, (512, 512), preserve_aspect_ratio=True)
 
     @staticmethod
-    def loader(dataBase: pd.DataFrame, batch_size: int, n_workers=0,
-               shuffle=False):
-        return DataLoader(dataBase, batch_size=batch_size,
-                          num_workers=n_workers, shuffle=shuffle)
+    def _l2(tensor):
+        return tf.math.l2_normalize(tensor, axis=1)
+
+    @staticmethod
+    def cosine_distance(a, b):
+        return a.dot(b.T)
+
+
+
+
