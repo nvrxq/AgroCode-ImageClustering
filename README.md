@@ -1,4 +1,4 @@
-# Deep-Clustering-with-Convolutional-Autoencoders
+# Deep-Clustering-with-Convolutional-Autoencoders and a simple solution to the clustering problem( img2vec & cosine similarity)
 Code from paper :  https://xifengguo.github.io/papers/ICONIP17-DCEC.pdf
 
 
